@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BitRocs - Your Digital Partner</title>
+    <meta name="description" content="BitRocs provides cutting-edge digital solutions for web, mobile, and marketing needs with AI-powered technology">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00f0ff",
+                        secondary: "#8a2be2",
+                        dark: "#0a0a1a",
+                        darker: "#050510"
+                    },
+                    fontFamily: {
+                        heading: ['Orbitron', 'sans-serif'],
+                        body: ['Roboto', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s infinite cubic-bezier(0.4, 0, 0.6, 1)',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        glow: {
+                            'from': { 'text-shadow': '0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00f0ff, 0 0 20px #00f0ff' },
+                            'to': { 'text-shadow': '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00f0ff, 0 0 40px #00f0ff' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .circuit-bg {
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="rgba(0,240,255,0.05)" stroke-width="1"/><path d="M20,20 L80,20 L80,80 L20,80 Z" fill="none" stroke="rgba(0,240,255,0.05)" stroke-width="1"/><path d="M40,40 L60,40 L60,60 L40,60 Z" fill="none" stroke="rgba(0,240,255,0.05)" stroke-width="1"/><path d="M0,0 L100,100" stroke="rgba(0,240,255,0.05)" stroke-width="1"/><path d="M100,0 L0,100" stroke="rgba(0,240,255,0.05)" stroke-width="1"/></svg>');
+            background-size: 100px 100px;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #00f0ff, #8a2be2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 240, 255, 0.1), 0 10px 10px -5px rgba(0, 240, 255, 0.04);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #00f0ff, #8a2be2);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-darker text-gray-200 font-body min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <nav class="bg-dark bg-opacity-80 backdrop-blur-md fixed w-full z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#home" class="text-2xl font-heading font-bold gradient-text">BitRocs</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center circuit-bg relative overflow-hidden pt-20">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-darker z-10"></div>
+            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                <div class="absolute top-20 left-20 w-40 h-40 rounded-full bg-primary animate-pulse-slow"></div>
+                <div class="absolute bottom-40 right-20 w-60 h-60 rounded-full bg-secondary animate-pulse-slow animation-delay-2000"></div>
+                <div class="absolute top-1/2 left-1/2 w-80 h-80 rounded-full bg-primary animate-pulse-slow animation-delay-4000"></div>
+            </div>
+            <div class="container mx-auto px-6 z-20 text-center">
+                <h1 class="text-5xl md:text-7xl font-heading font-bold mb-6 gradient-text animate-glow">BitRocs</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Your Digital Partner for Web, Mobile, and Marketing Solutions</p>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <a href="#contact" class="bg-gradient-to-r from-primary to-secondary text-dark font-bold py-3 px-8 rounded-full hover:opacity-90 transition-all transform hover:scale-105">Work with Us</a>
+                    <a href="#projects" class="border border-primary text-primary font-bold py-3 px-8 rounded-full hover:bg-primary hover:bg-opacity-10 transition-all transform hover:scale-105">Our Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-dark">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-heading font-bold mb-12 text-center gradient-text">About BitRocs</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                    <div class="animate-float">
+                        <img src="https://picsum.photos/600/400?random=1" alt="BitRocs team working" class="rounded-xl shadow-xl" loading="lazy">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-heading font-bold mb-4">Our Mission</h3>
+                        <p class="mb-6">At BitRocs, we're dedicated to transforming businesses through cutting-edge digital solutions powered by AI and innovative technologies. We bridge the gap between ideas and execution.</p>
+                        <h3 class="text-2xl font-heading font-bold mb-4">Our Vision</h3>
+                        <p>To become the leading digital partner for businesses worldwide, delivering exceptional value through technology-driven solutions that drive growth and innovation.</p>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="text-2xl font-heading font-bold mb-8 text-center">Our Journey</h3>
+                    <div class="relative">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-primary to-secondary"></div>
+                        <div class="space-y-8">
+                            <div class="relative pl-12 md:pl-0 md:flex justify-between items-center">
+                                <div class="md:w-5/12 mb-4 md:mb-0">
+                                    <h4 class="font-heading font-bold text-xl">2018 - Foundation</h4>
+                                    <p>BitRocs was founded with a small team of passionate developers and designers.</p>
+                                </div>
+                                <div class="hidden md:block w-2 h-2 rounded-full bg-primary mx-4"></div>
+                                <div class="md:w-5/12 text-right">
+                                    <div class="hidden md:block"></div>
+                                </div>
+                            </div>
+                            <div class="relative pl-12 md:pl-0 md:flex justify-between items-center">
+                                <div class="md:w-5/12 mb-4 md:mb-0 text-right">
+                                    <div class="hidden md:block"></div>
+                                </div>
+                                <div class="hidden md:block w-2 h-2 rounded-full bg-secondary mx-4"></div>
+                                <div class="md:w-5/12">
+                                    <h4 class="font-heading font-bold text-xl">2019 - First Major Client</h4>
+                                    <p>Secured our first enterprise client, marking our entry into the corporate sector.</p>
+                                </div>
+                            </div>
+                            <div class="relative pl-12 md:pl-0 md:flex justify-between items-center">
+                                <div class="md:w-5/12 mb-4 md:mb-0">
+                                    <h4 class="font-heading font-bold text-xl">2020 - AI Integration</h4>
+                                    <p>Integrated AI capabilities into our service offerings, expanding our expertise.</p>
+                                </div>
+                                <div class="hidden md:block w-2 h-2 rounded-full bg-primary mx-4"></div>
+                                <div class="md:w-5/12 text-right">
+                                    <div class="hidden md:block"></div>
+                                </div>
+                            </div>
+                            <div class="relative pl-12 md:pl-0 md:flex justify-between items-center">
+                                <div class="md:w-5/12 mb-4 md:mb-0 text-right">
+                                    <div class="hidden md:block"></div>
+                                </div>
+                                <div class="hidden md:block w-2 h-2 rounded-full bg-secondary mx-4"></div>
+                                <div class="md:w-5/12">
+                                    <h4 class="font-heading font-bold text-xl">2022 - Global Expansion</h4>
+                                    <p>Expanded our operations to serve clients across three continents.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-heading font-bold mb-8 text-center">Our Partners</h3>
+                    <div class="flex flex-wrap justify-center gap-8">
+                        <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-center w-40 h-20">
+                            <span class="font-bold">TechCorp</span>
+                        </div>
+                        <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-center w-40 h-20">
+                            <span class="font-bold">AI Solutions</span>
+                        </div>
+                        <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-center w-40 h-20">
+                            <span class="font-bold">DigitalX</span>
+                        </div>
+                        <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-center w-40 h-20">
+                            <span class="font-bold">WebNova</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 bg-darker">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-heading font-bold mb-12 text-center gradient-text">Our Projects</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="bg-dark rounded-xl overflow-hidden shadow-lg card-hover">
+                        <img src="https://picsum.photos/600/400?random=2" alt="E-commerce platform" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-heading font-bold">E-Commerce Platform</h3>
+                                <span class="bg-primary bg-opacity-20 text-primary text-xs px-2 py-1 rounded">Web App</span>
+                            </div>
+                            <p class="text-gray-400 mb-4">A full-featured e-commerce solution with AI-powered recommendations and seamless checkout.</p>
+                            <a href="#" class="text-primary hover:underline">View Project →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="bg-dark rounded-xl overflow-hidden shadow-lg card-hover">
+                        <img src="https://picsum.photos/600/400?random=3" alt="Fitness mobile app" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-heading font-bold">Fitness Tracker</h3>
+                                <span class="bg-secondary bg-opacity-20 text-secondary text-xs px-2 py-1 rounded">Mobile App</span>
+                            </div>
+                            <p class="text-gray-400 mb-4">AI-powered fitness companion with personalized workout plans and nutrition tracking.</p>
+                            <a href="#" class="text-primary hover:underline">View Project →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="bg-dark rounded-xl overflow-hidden shadow-lg card-hover">
+                        <img src="https://picsum.photos/600/400?random=4" alt="Marketing dashboard" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-heading font-bold">Marketing Dashboard</h3>
+                                <span class="bg-primary bg-opacity-20 text-primary text-xs px-2 py-1 rounded">Marketing</span>
+                            </div>
+                            <p class="text-gray-400 mb-4">Comprehensive analytics dashboard for tracking and optimizing digital marketing campaigns.</p>
+                            <a href="#" class="text-primary hover:underline">View Project →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="bg-dark rounded-xl overflow-hidden shadow-lg card-hover">
+                        <img src="https://picsum.photos/600/400?random=5" alt="Telegram bot interface" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-heading font-bold">Customer Support Bot</h3>
+                                <span class="bg-secondary bg-opacity-20 text-secondary text-xs px-2 py-1 rounded">Telegram Bot</span>
+                            </div>
+                            <p class="text-gray-400 mb-4">AI-powered Telegram bot handling customer inquiries with natural language processing.</p>
+                            <a href="#" class="text-primary hover:underline">View Project →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="bg-dark rounded-xl overflow-hidden shadow-lg card-hover">
+                        <img src="https://picsum.photos/600/400?random=6" alt="Social media app" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-heading font-bold">Social Network</h3>
+                                <span class="bg-primary bg-opacity-20 text-primary text-xs px-2 py-1 rounded">Mobile App</span>
+                            </div>
+                            <p class="text-gray-400 mb-4">Next-gen social platform with advanced content discovery algorithms.</p>
+                            <a href="#" class="text-primary hover:underline">View Project →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="bg-dark rounded-xl overflow-hidden shadow-lg card-hover">
+                        <img src="https://picsum.photos/600/400?random=7" alt="AI analytics platform" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-heading font-bold">AI Analytics</h3>
+                                <span class="bg-secondary bg-opacity-20 text-secondary text-xs px-2 py-1 rounded">Web App</span>
+                            </div>
+                            <p class="text-gray-400 mb-4">Business intelligence platform with predictive analytics and automated reporting.</p>
+                            <a href="#" class="text-primary hover:underline">View Project →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-dark">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-heading font-bold mb-12 text-center gradient-text">Get In Touch</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label for="message" class="block mb-2">Your Message</label>
+                                <textarea id="message" rows="5" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                            </div>
+                            <button type="submit" class="bg-gradient-to-r from-primary to-secondary text-dark font-bold py-3 px-8 rounded-full hover:opacity-90 transition-all w-full md:w-auto">Send Message</button>
+                        </form>
+                    </div>
+                    <div>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-20 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-heading font-bold mb-1">Phone</h3>
+                                    <p>+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-20 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-heading font-bold mb-1">Email</h3>
+                                    <p>contact@bitrocs.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary bg-opacity-20 p-3 rounded-full mr-4">
+                                    <i class="fab fa-telegram text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-heading font-bold mb-1">Telegram</h3>
+                                    <p>@bitrocs_support</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12">
+                            <h3 class="font-heading font-bold text-xl mb-4">Find Us On</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center hover:bg-primary hover:bg-opacity-20 transition-all">
+                                    <i class="fab fa-instagram text-xl"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center hover:bg-primary hover:bg-opacity-20 transition-all">
+                                    <i class="fab fa-telegram text-xl"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center hover:bg-primary hover:bg-opacity-20 transition-all">
+                                    <i class="fab fa-linkedin-in text-xl"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 w-12 h-12 rounded-full flex items-center justify-center hover:bg-primary hover:bg-opacity-20 transition-all">
+                                    <i class="fab fa-twitter text-xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12 bg-gray-800 rounded-xl overflow-hidden h-64">
+                            <!-- Map placeholder -->
+                            <div class="w-full h-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-4xl text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-darker border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-heading font-bold gradient-text mb-4">BitRocs</h3>
+                    <p class="text-gray-400">Your digital partner for innovative web, mobile, and marketing solutions powered by AI.</p>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-primary transition-all">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-primary transition-all">About</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-primary transition-all">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary transition-all">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-all">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-all">Mobile Apps</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-all">AI Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-all">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading font-bold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="bg-gray-800 border border-gray-700 rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary w-full">
+                        <button class="bg-gradient-to-r from-primary to-secondary text-dark font-bold px-4 rounded-r-lg">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm">© 2023 BitRocs. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-primary transition-all">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-primary transition-all">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Form submission
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                form.reset();
+            });
+        }
+    </script>
+</body>
+</html>
